@@ -19,8 +19,9 @@ def register_view(request):
             return render(request, 'web/registration.html', {
                 'form': form
             })
-        email = request.POST['email']
-        password = request.POST['password']
+        #cleaned_data es la data limpia y validada
+        email = form.cleaned_data['email']
+        password = form.cleaned_data['password']
         user = User(email=email)
         user.set_password(password)
         user.save()
