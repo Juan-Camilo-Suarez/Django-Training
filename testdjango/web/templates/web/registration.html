@@ -5,16 +5,21 @@
     <title>Registration</title>
 </head>
 <body>
-    <h1>
-        Registration
-    </h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="email" name="email" id="email" placeholder="Email" required autocomplete="off"> <br>
-        <input type="password" name="password" id="password" placeholder="password" required autocomplete="off"> <br>
-        <input type="password" name="password2" id="password2" placeholder="password2" required autocomplete="off"> <br>
-        <button>Sign Up</button>
-    </form>
+<h1>
+    Registration
+</h1>
+
+{% if form %}
+{{ form.errors }}
+{%endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="email" name="email" id="email" placeholder="Email" required autocomplete="off"> <br>
+    <input type="password" name="password" id="password" placeholder="password" required autocomplete="off"> <br>
+    <input type="password" name="password2" id="password2" placeholder="password2" required autocomplete="off"> <br>
+    <button>Sign Up</button>
+</form>
 
 </body>
 </html>
