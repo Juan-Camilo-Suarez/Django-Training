@@ -42,7 +42,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=200)
     # regula quien puede ir al admin
-    is_staff = models.BooleanField()
+    is_staff = models.BooleanField(default=False)
 
 
 class Site(BaseModel):
