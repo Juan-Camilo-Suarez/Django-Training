@@ -9,6 +9,10 @@
     Registration
 </h1>
 
+{%if message %}
+{{ message }}
+{%endif%}
+
 {% if form %}
 {{ form.errors }}
 {%endif %}
