@@ -12,14 +12,13 @@ def main_view(request):
 
 
 def register_view(request):
-    context = {}
+    context = {'form': RegistrationForm()}
     # recoger toda la informacion del post
     # print(request.POST)
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        if not form.is_valid():
-            context['form'] = form
-        else:
+        context['form'] = form
+        if form.is_valid():
             # cleaned_data es la data limpia y validada
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']

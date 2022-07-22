@@ -19,9 +19,7 @@
 
 <form action="" method="post">
     {% csrf_token %}
-    <input type="email" name="email" id="email" placeholder="Email" required autocomplete="off"> <br>
-    <input type="password" name="password" id="password" placeholder="password" required autocomplete="off"> <br>
-    <input type="password" name="password2" id="password2" placeholder="password2" required autocomplete="off"> <br>
+    {{ form.as_p }}
     <button>Sign Up</button>
 </form>
 
