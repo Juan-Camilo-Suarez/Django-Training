@@ -5,8 +5,8 @@ from django.forms import forms, fields, PasswordInput
 
 class RegistrationForm(forms.Form):
     email = fields.EmailField()
-    #para que no se vea la clave
-    #nombre para los labels
+    # para que no se vea la clave
+    # nombre para los labels
     password = fields.CharField(label="Password", widget=PasswordInput())
     password2 = fields.CharField(label='Repeat Password', widget=PasswordInput())
 
@@ -16,3 +16,10 @@ class RegistrationForm(forms.Form):
         if cleaned_data['password'] != cleaned_data['password2']:
             self.add_error('password', 'password not correct')
         return cleaned_data
+
+
+class LoginForm(forms.Form):
+    email = fields.EmailField()
+    password = fields.CharField(
+        label="Password",
+        widget=PasswordInput())

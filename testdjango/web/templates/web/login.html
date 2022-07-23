@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <h1>Вход</h1>
+    {{ error }}
+    {% for key, error in form.non_field_errors.items %}
+        <p>{{ key }} - {{ error }}</p>
+    {% endfor %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Войти</button>
+    </form>
+</body>
+
+</html>

@@ -1,8 +1,9 @@
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .forms import RegistrationForm
+from .forms import RegistrationForm, LoginForm
 from .models import User
 from .services import register_user
 
@@ -26,3 +27,41 @@ def register_view(request):
             register_user(email, password)
             context['message'] = 'registration success'
     return render(request, 'web/registration.html', context)
+
+
+# def login_view(request):
+#     form = LoginForm()
+#     context = {'form': form}
+#     if request.method == 'POST':
+#         form = LoginForm(request.POST)
+#         if form.is_valid():
+#             email = form.cleaned_data['email']
+#             password = form.cleaned_data['password']
+#             # debemos probar que los datos ingresados son correctos
+#             # login()revisa que los datos del login este en bd
+#             # authenticate() imformacion de la session y del usuario authenticado y revisa que los datos sean corretos
+#             user = authenticate(request, email=email, password=password)
+#             if user is None:
+#                 context['error'] = 'not correct email and password'
+#
+#
+#     return render(request, 'web/login.html', context)
+
+def login_view(request):
+    form = LoginForm()
+    context = {'form': form}
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            # debemos probar que los datos ingresados son correctos
+            # login()revisa que los datos del login este en bd
+            # authenticate() imformacion de la session y del usuario authenticado y revisa que los datos sean corretos
+            user = authenticate(request, email=email, password=password)
+            if user is None:
+                context['error'] = 'Email or password incorrect'
+            else:
+                login(request, user)
+                return redirect('main')
+    return render(request, 'web/login.html', context)
