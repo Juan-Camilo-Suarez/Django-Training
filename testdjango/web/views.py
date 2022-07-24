@@ -1,8 +1,11 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.views import View
+
 from .forms import RegistrationForm, LoginForm, SiteForm
 from .models import Site
 from .services import register_user
@@ -55,18 +58,16 @@ def logout_view(request):
     logout(request)
     return redirect('main')
 
+# LoginRequiredMixin para ver si esta autorizado el user
+class SiteView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'web/sites/add.html', {'form': SiteForm()})
 
-# requiere autorizacion para ir a esta vista
-@login_required
-def site_add_view(request):
-    context = {'form': SiteForm()}
-    if request.method == 'POST':
+    def post(self, request, *args, **kwargs):
         form = SiteForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            # agregar el id del usuario al modelo
             data['user_id'] = request.user.id
-            # guardar el modelo site con parametros internos
             Site.objects.create(**data)
-        context['form'] = form
-    return render(request, 'web/sites/add.html', context)
+        context = {'form': form}
+        return render(request, 'web/sites/add.html', context)
