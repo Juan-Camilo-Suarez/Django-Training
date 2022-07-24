@@ -29,23 +29,6 @@ def register_view(request):
     return render(request, 'web/registration.html', context)
 
 
-# def login_view(request):
-#     form = LoginForm()
-#     context = {'form': form}
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             email = form.cleaned_data['email']
-#             password = form.cleaned_data['password']
-#             # debemos probar que los datos ingresados son correctos
-#             # login()revisa que los datos del login este en bd
-#             # authenticate() imformacion de la session y del usuario authenticado y revisa que los datos sean corretos
-#             user = authenticate(request, email=email, password=password)
-#             if user is None:
-#                 context['error'] = 'not correct email and password'
-#
-#
-#     return render(request, 'web/login.html', context)
 
 def login_view(request):
     form = LoginForm()
