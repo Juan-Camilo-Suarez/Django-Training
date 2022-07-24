@@ -1,7 +1,10 @@
-from django.forms import forms, fields, PasswordInput
+from django.forms import forms, fields, PasswordInput, ModelForm
+
+from .models import Site
 
 
 # validation of data
+
 
 class RegistrationForm(forms.Form):
     email = fields.EmailField()
@@ -24,3 +27,9 @@ class LoginForm(forms.Form):
     password = fields.CharField(
         label="Password",
         widget=PasswordInput())
+
+
+class SiteForm(ModelForm):
+    class Meta:
+        model = Site
+        fields = ('url', 'name')

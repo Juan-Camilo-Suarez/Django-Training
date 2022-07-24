@@ -1,10 +1,10 @@
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .forms import RegistrationForm, LoginForm
-from .models import User
+from .forms import RegistrationForm, LoginForm, SiteForm
+from .models import Site
 from .services import register_user
 
 
@@ -49,3 +49,19 @@ def login_view(request):
                 login(request, user)
                 return redirect('main')
     return render(request, 'web/login.html', context)
+
+
+# requiere autorizacion para ir a esta vista
+@login_required
+def site_add_view(request):
+    context = {'form': SiteForm()}
+    if request.method == 'POST':
+        form = SiteForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            # agregar el id del usuario al modelo
+            data['user_id'] = request.user.id
+            # guardar el modelo site con parametros internos 
+            Site.objects.create(**data)
+        context['form'] = form
+    return render(request, 'web/sites/add.html', context)

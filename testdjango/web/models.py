@@ -46,9 +46,9 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
 
 
 class Site(BaseModel):
-    url = models.URLField()
-    name = models.CharField(max_length=200)
-    status = models.BooleanField()
+    url = models.URLField(verbose_name="URL")
+    name = models.CharField(max_length=200, verbose_name='Name')
+    status = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
