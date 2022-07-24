@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import FormView
+from django.views.generic import FormView, CreateView
 
 from .forms import RegistrationForm, LoginForm, SiteForm
 from .models import Site
@@ -62,7 +62,7 @@ def logout_view(request):
 
 
 # LoginRequiredMixin para ver si esta autorizado el user
-class SiteView(LoginRequiredMixin, FormView):
+class SiteView(LoginRequiredMixin, CreateView):
     template_name = 'web/sites/add.html'
     form_class = SiteForm
     # con reverse_lazy buscamos el url por el nombre en el url.py haciendo un scan
@@ -70,5 +70,4 @@ class SiteView(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         form.instance.user_id = self.request.user.id
-        form.save()
         return super(SiteView, self).form_valid(form)
