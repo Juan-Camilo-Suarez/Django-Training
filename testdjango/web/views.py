@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import FormView, CreateView
+from django.views.generic import FormView, CreateView, DetailView
 
 from .forms import RegistrationForm, LoginForm, SiteForm
 from .models import Site
@@ -71,3 +71,10 @@ class SiteView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user_id = self.request.user.id
         return super(SiteView, self).form_valid(form)
+
+
+@login_required
+def site_detail_view(request, pk):
+    object = Site.objects.get(id=pk)
+    context = {'object': object}
+    return render(request, 'web/sites/detail.html', context)
