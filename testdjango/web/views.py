@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import FormView, CreateView, DetailView, UpdateView
+from django.views.generic import FormView, CreateView, DetailView, UpdateView, ListView
 
 from .forms import RegistrationForm, LoginForm, SiteForm
 from .models import Site
@@ -84,6 +84,11 @@ class SiteUpdateView(LoginRequiredMixin, UpdateView):
     fields = ('name', 'url')
 
     def get_success_url(self):
-        #asi para meterle el id
+        # asi para meterle el id
         return reverse('site', args=(self.object.id,))
+
+
+class SiteListView(LoginRequiredMixin, ListView):
+    model = Site
+    template_name = 'web/sites/list.html'
 
