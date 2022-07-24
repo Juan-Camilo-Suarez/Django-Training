@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import register_view, main_view, login_view, logout_view, SiteView, site_detail_view
+from .views import register_view, main_view, login_view, logout_view, SiteView, SiteDetailView
 
 urlpatterns = [
     path('', main_view, name='main'),
@@ -24,5 +24,5 @@ urlpatterns = [
     path('register/', register_view, name='register'),
     path('logout/', logout_view, name='logout'),
     path('sites/add/', SiteView.as_view(), name='site-add'),
-    path('sites/<int:pk>/', site_detail_view, name='site'),
+    path('sites/<int:pk>/', SiteDetailView.as_view(), name='site'),
 ]

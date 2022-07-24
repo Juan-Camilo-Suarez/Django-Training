@@ -73,8 +73,6 @@ class SiteView(LoginRequiredMixin, CreateView):
         return super(SiteView, self).form_valid(form)
 
 
-@login_required
-def site_detail_view(request, pk):
-    object = Site.objects.get(id=pk)
-    context = {'object': object}
-    return render(request, 'web/sites/detail.html', context)
+class SiteDetailView(LoginRequiredMixin, DetailView):
+    model = Site
+    template_name = 'web/sites/detail.html'
