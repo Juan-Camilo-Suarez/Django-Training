@@ -6,10 +6,7 @@
 </head>
 <body>
     <h1>Вход</h1>
-    {{ error }}
-    {% for key, error in form.non_field_errors.items %}
-        <p>{{ key }} - {{ error }}</p>
-    {% endfor %}
+
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

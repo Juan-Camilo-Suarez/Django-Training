@@ -29,7 +29,6 @@ def register_view(request):
     return render(request, 'web/registration.html', context)
 
 
-
 def login_view(request):
     form = LoginForm()
     context = {'form': form}
@@ -43,7 +42,9 @@ def login_view(request):
             # authenticate() imformacion de la session y del usuario authenticado y revisa que los datos sean corretos
             user = authenticate(request, email=email, password=password)
             if user is None:
-                context['error'] = 'Email or password incorrect'
+                # context['error'] = 'Email or password incorrect'
+                form.add_error(None, "email or password incorrect")
+                context['form'] = form
             else:
                 login(request, user)
                 return redirect('main')
