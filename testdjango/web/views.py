@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -51,6 +51,11 @@ def login_view(request):
     return render(request, 'web/login.html', context)
 
 
+def logout_view(request):
+    logout(request)
+    return redirect('main')
+
+
 # requiere autorizacion para ir a esta vista
 @login_required
 def site_add_view(request):
@@ -61,7 +66,7 @@ def site_add_view(request):
             data = form.cleaned_data
             # agregar el id del usuario al modelo
             data['user_id'] = request.user.id
-            # guardar el modelo site con parametros internos 
+            # guardar el modelo site con parametros internos
             Site.objects.create(**data)
         context['form'] = form
     return render(request, 'web/sites/add.html', context)

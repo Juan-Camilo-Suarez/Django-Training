@@ -10,6 +10,7 @@
 {% if request.user.is_authenticated %}
     <p> loged user is: {{ user.email }}</p>
     <p><a href="{% url 'site-add' %}">site-add</a>
+    <p><a href="{% url 'logout' %}">logout</a>
         {% else %}
     <p><a href="{% url 'register' %}">Register</a>
         /
