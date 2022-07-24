@@ -3,6 +3,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import UserManager as DjangoUserManager, AbstractUser, PermissionsMixin
 from django.db import models
 
+
 # para crear los usuarios de django
 class BaseModel(models.Model):
     # auto_now_add=True sirve para que se crea automatico cuando se cree un modelo

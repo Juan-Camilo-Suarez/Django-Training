@@ -27,5 +27,5 @@ urlpatterns = [
     path('sites/add/', SiteView.as_view(), name='site-add'),
     path('sites/<int:pk>/', SiteDetailView.as_view(), name='site'),
     path('sites/<int:pk>/edit/', SiteUpdateView.as_view(), name='site-edit'),
-    path('sites/', SiteListView.as_view(), name='site-list'),
+    path('sites/', SiteListView.as_view(), name='sites'),
 ]
