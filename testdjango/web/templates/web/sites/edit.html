@@ -8,12 +8,24 @@
     <title>Add Site</title>
 </head>
 <body>
-<h1> add site</h1>
+<h1>
+    {% if not object %}
+    Add
+    {% else %}
+    Update
+    {% endif %}
+ site</h1>
 <form action="" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
 
-    <button> add site</button>
+    <button>
+        {% if not object %}
+    Add
+    {% else %}
+    Update
+    {% endif %}
+     site</button>
 </form>
 
 
