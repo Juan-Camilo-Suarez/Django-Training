@@ -4,7 +4,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import FormView
 
 from .forms import RegistrationForm, LoginForm, SiteForm
 from .models import Site
@@ -58,16 +60,15 @@ def logout_view(request):
     logout(request)
     return redirect('main')
 
-# LoginRequiredMixin para ver si esta autorizado el user
-class SiteView(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'web/sites/add.html', {'form': SiteForm()})
 
-    def post(self, request, *args, **kwargs):
-        form = SiteForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            data['user_id'] = request.user.id
-            Site.objects.create(**data)
-        context = {'form': form}
-        return render(request, 'web/sites/add.html', context)
+# LoginRequiredMixin para ver si esta autorizado el user
+class SiteView(LoginRequiredMixin, FormView):
+    template_name = 'web/sites/add.html'
+    form_class = SiteForm
+    # con reverse_lazy buscamos el url por el nombre en el url.py haciendo un scan
+    success_url = reverse_lazy('main')
+
+    def form_valid(self, form):
+        form.instance.user_id = self.request.user.id
+        form.save()
+        return super(SiteView, self).form_valid(form)
