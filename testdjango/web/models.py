@@ -52,6 +52,10 @@ class Site(BaseModel):
     status = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        # de esta manera para cada usuario se tendra un url unico
+        unique_together = [('url', 'user_id')]
+
 
 class SiteHistory(BaseModel):
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
