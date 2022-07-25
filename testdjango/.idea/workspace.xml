@@ -7,7 +7,7 @@
       <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/management/commands/import_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/management/commands/import_sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
       <workItem from="1658671330336" duration="101000" />
       <workItem from="1658671481984" duration="138000" />
       <workItem from="1658671654555" duration="43000" />
-      <workItem from="1658672038786" duration="2485000" />
+      <workItem from="1658672038786" duration="3918000" />
     </task>
     <servers />
   </component>
