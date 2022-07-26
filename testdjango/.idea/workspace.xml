@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdjango/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdjango/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testdjango/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
       <workItem from="1658672038786" duration="4345000" />
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
-      <workItem from="1658824563188" duration="2917000" />
+      <workItem from="1658824563188" duration="4208000" />
     </task>
     <servers />
   </component>

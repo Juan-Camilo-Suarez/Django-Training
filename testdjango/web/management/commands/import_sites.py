@@ -6,9 +6,12 @@ from web.models import Site
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
+    def add_arguments(self, parser):
+        # echo 'url' | python manage.py import_sites --user_id #
+        parser.add_argument('--user_id', dest='user_id', help='user ID', type=int)
+
+    def handle(self, user_id, *args, **options):
         fd = sys.stdin
-        user_id = 10
 
         count = 0
         sites = []
