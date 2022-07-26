@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-</head>
-<body>
-<h1>
-    Registration
-</h1>
-<!--
+{% extends 'web/base.html' %}
+{% block content %}
+
+    <h1>
+        Registration
+    </h1>
+    <!--
 variante de mostrar los errores
 {% for error in form.non_field_errors %}
     {{error}}
 {% endfor %} -->
-<!-- enctype="multipart/form-data"> esto es para poder insertar  archivos -->
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Sign Up</button>
-</form>
+    <!-- enctype="multipart/form-data"> esto es para poder insertar  archivos -->
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Sign Up</button>
+    </form>
 
-</body>
-</html>
+{% endblock %}

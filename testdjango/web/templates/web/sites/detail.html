@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ object.name }}</title>
-</head>
-<body>
-<h1>{{ object.name }}</h1>
-<p><a href="{{ object.url }}" target="_black">{{ object.url }}</a></p>
-<!-- asi para meterle el id en el path -->
-<p><a href="{% url 'site-edit' object.id %}">edit site</a></p>
-</body>
-</html>
+{% extends 'web/base.html' %}
+{% block content %}
+
+    <h1>{{ object.name }}</h1>
+    <p><a href="{{ object.url }}" target="_black">{{ object.url }}</a></p>
+    <!-- asi para meterle el id en el path -->
+    <p><a href="{% url 'site-edit' object.id %}">edit site</a></p>
+
+{% endblock %}
