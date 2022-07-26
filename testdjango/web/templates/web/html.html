@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML</title>
+</head>
+<body>
+    <h1>Заголовок 1</h1>
+    <h2>Заголовок 2</h2>
+    <h3>Заголовок 3</h3>
+    <h6>Заголовок 6</h6>
+    <p>Привет, мир!</p>
+    <p>Привет, мир, снова!</p>
+    <p>
+        <b>Lorem</b> <i>ipsum</i> <strike>dolor</strike>
+        <u>sit amet</u>,
+        <a href="http://yandex.ru" target="_blank">yandex</a>,
+        <a href="/">main page</a>
+        <br>
+        adipisicing elit. A accusantium consequuntur est eveniet non odit
+        pariatur quaerat similique tempora ullam? Consequatur dicta labore nobis, non perferendis quia soluta tempore
+        unde?
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi eligendi esse, hic illo ipsa iure nam odit officiis optio perspiciatis placeat, praesentium, qui quidem rerum tempora unde. Odit, officiis.</p>
+
+    <ul>
+        <li>Хлеб</li>
+        <li>Молоко</li>
+        <li>Каша</li>
+    </ul>
+
+    <ol>
+        <li>Физра</li>
+        <li>Django 1</li>
+        <li>Django 2</li>
+    </ol>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Название пары</th>
+                <th>Кабинет</th>
+                <th>Время</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Физкультура</td>
+                <td>УНИКС</td>
+                <td>14.00-15.30</td>
+            </tr>
+            <tr>
+                <td>Django</td>
+                <td>1508</td>
+                <td>15.40-17.10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="http://kpfu.ru" target="_blank">
+        <img
+            src="/media/user_avatars/ilnur-kalimullin-602216-unsplash.jpg"
+            alt="Обои"
+            width="250"
+        >
+    </a>
+    <form action="">
+        <label for="first_input">Поле с текстом</label>
+        <input id="first_input" type="text" placeholder="Текст">
+        <br>
+        <label>
+            Дата начала мероприятия:
+            <input type="date" placeholder="Дата">
+        </label>
+        <br>
+        <input type="datetime-local" placeholder="Дата и время">
+        <input type="number" placeholder="Число">
+        <input type="password" placeholder="Пароль">
+        <br>
+
+        <label for="framework">Python Framework</label>
+        <select name="" id="framework">
+            <option value="django">Django</option>
+            <option value="flask">Flask</option>
+            <option value="tornado">Tornado</option>
+        </select>
+        <br><br>
+        <label>
+            <input type="checkbox" name="framework" value="django"> Django
+        </label>
+        <label>
+            <input type="checkbox" name="framework" value="tornado"> Tornado
+        </label>
+
+        <br><br>
+
+        <label>
+            <input type="radio" name="framework2" value="django"> Django
+        </label>
+        <label>
+            <input type="radio" name="framework2" value="tornado"> Tornado
+        </label>
+
+        <br>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    </form>
+</body>
+</html>

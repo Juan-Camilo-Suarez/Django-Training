@@ -93,3 +93,7 @@ class SiteUpdateView(LoginRequiredMixin, UpdateView):
 class SiteListView(LoginRequiredMixin, ListView):
     model = Site
     template_name = 'web/sites/list.html'
+
+
+def html_view(request):
+    return render(request, 'web/html.html')
