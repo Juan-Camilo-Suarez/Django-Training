@@ -123,6 +123,5 @@ AUTH_USER_MODEL = "web.User"
 
 LOGIN_URL = '/login/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/'
