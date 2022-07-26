@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5888ee85-be1f-4ad8-8dc1-9c37194eaff9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/templates/web/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/web/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/web/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/web/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/templates/web" />
+      <recent name="$PROJECT_DIR$/web/templates/web/sites" />
       <recent name="$PROJECT_DIR$/web/static/web" />
     </key>
   </component>
@@ -74,7 +77,7 @@
       <workItem from="1658672038786" duration="4345000" />
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
-      <workItem from="1658824563188" duration="10226000" />
+      <workItem from="1658824563188" duration="11202000" />
     </task>
     <servers />
   </component>
