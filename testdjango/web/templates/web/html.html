@@ -22,9 +22,12 @@
 
         body {
             font-family: "myfont", "Roboto", "Times New Roman";
+            /*
                         background-image: url("https://rozetked.me/images/uploads/dwoilp3BVjlE.jpg");
             background-repeat: no-repeat;
             background-position: center center;
+
+             */
 
         }
 
@@ -42,6 +45,10 @@
 
         img {
             width: 250px;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
         }
 
     </style>
@@ -55,6 +62,13 @@
 <p class="my-paragraph">Привет, мир!</p>
 <p><b>Привет</b>, мир, снова!</p>
 <p class="my-paragraph">
+    <a href="http://kpfu.ru" target="_blank">
+            <img
+                src="/media/user_avatars/ilnur-kalimullin-602216-unsplash.jpg"
+                alt="Обои"
+            >
+        </a>
+
     <b>Lorem</b> <i>ipsum</i> <strike>dolor</strike>
     <u>sit amet</u>,
     <a href="http://yandex.ru" target="_blank">yandex</a>,
@@ -101,12 +115,6 @@
     </tbody>
 </table>
 
-<a href="http://kpfu.ru" target="_blank">
-    <img
-            src="/media/user_avatars/ilnur-kalimullin-602216-unsplash.jpg"
-            alt="Обои"
-    >
-</a>
 <form action="">
     <label for="first_input">Поле с текстом</label>
     <input id="first_input" type="text" placeholder="Текст">
