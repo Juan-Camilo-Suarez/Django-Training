@@ -22,14 +22,16 @@ def register_view(request):
     # recoger toda la informacion del post
     # print(request.POST)
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        # reques.Files para cargar archivos
+        form = RegistrationForm(request.POST, request.FILES)
         context['form'] = form
         if form.is_valid():
             # cleaned_data es la data limpia y validada
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            avatar = form.cleaned_data['avatar']
             # servico para guardar el user en bd
-            register_user(email, password)
+            register_user(email, password, avatar)
             context['message'] = 'registration success'
     return render(request, 'web/registration.html', context)
 
@@ -91,4 +93,3 @@ class SiteUpdateView(LoginRequiredMixin, UpdateView):
 class SiteListView(LoginRequiredMixin, ListView):
     model = Site
     template_name = 'web/sites/list.html'
-

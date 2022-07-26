@@ -13,8 +13,8 @@ variante de mostrar los errores
 {% for error in form.non_field_errors %}
     {{error}}
 {% endfor %} -->
-
-<form action="" method="post">
+<!-- enctype="multipart/form-data"> esto es para poder insertar  archivos -->
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button>Sign Up</button>

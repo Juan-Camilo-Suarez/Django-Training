@@ -12,6 +12,7 @@ class RegistrationForm(forms.Form):
     # nombre para los labels
     password = fields.CharField(label="Password", widget=PasswordInput())
     password2 = fields.CharField(label='Repeat Password', widget=PasswordInput())
+    avatar = fields.FileField()
 
     def clean(self):
         # mis propias validaciones
