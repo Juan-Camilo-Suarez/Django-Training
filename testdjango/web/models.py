@@ -44,7 +44,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     password = models.CharField(max_length=200)
     # regula quien puede ir al admin
     is_staff = models.BooleanField(default=False)
-    avatar = models.FileField(null=True, blank=True)
+    avatar = models.ImageField(null=True, blank=True)
 
 
 class Site(BaseModel):
