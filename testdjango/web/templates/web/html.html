@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML</title>
+        <style>
+        body {
+            background: red;
+        }
+        h1, h3 {
+            color: white;
+        }
+        .my-paragraph {
+            font-family: "Lucida Grande";
+            font-weight: bold;
+            color: white;
+            font-size: 40px;
+        }
+        #heading1 {
+            text-decoration: underline;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Заголовок 1</h1>
+    <h1 id="heading1">Заголовок 1</h1>
     <h2>Заголовок 2</h2>
     <h3>Заголовок 3</h3>
     <h6>Заголовок 6</h6>
-    <p>Привет, мир!</p>
+    <p class="my-paragraph">Привет, мир!</p>
     <p>Привет, мир, снова!</p>
-    <p>
+    <p class="my-paragraph">
         <b>Lorem</b> <i>ipsum</i> <strike>dolor</strike>
         <u>sit amet</u>,
         <a href="http://yandex.ru" target="_blank">yandex</a>,
