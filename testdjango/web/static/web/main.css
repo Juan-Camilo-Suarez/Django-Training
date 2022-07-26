@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.my-paragraph {
+
+    font-size: 20px;
+    text-align: justify;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin: 15px;
+    margin-top: 30px;
+
+}
+
+.col {
+    width: 50%;
+    float: left;
+}
+
+
+body {
+    font-family: "myfont", "Roboto", "Times New Roman";
+    background: #4ac1f7;
+    /*
+                background-image: url("https://rozetked.me/images/uploads/dwoilp3BVjlE.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+
+     */
+
+}
+
+.times {
+    font-family: "Times New Roman";
+}
+
+.my-paragraph b {
+    color: green;
+}
+
+#heading1 {
+    text-decoration: underline;
+}
+
+img {
+    width: 250px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}
