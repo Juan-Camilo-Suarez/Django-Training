@@ -4,10 +4,6 @@
     <list default="true" id="5888ee85-be1f-4ad8-8dc1-9c37194eaff9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/sites/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/sites/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/sites/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/sites/edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +74,7 @@
       <workItem from="1658672038786" duration="4345000" />
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
-      <workItem from="1658824563188" duration="11507000" />
+      <workItem from="1658824563188" duration="11868000" />
     </task>
     <servers />
   </component>

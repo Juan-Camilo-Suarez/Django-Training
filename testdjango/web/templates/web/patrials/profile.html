@@ -1,0 +1,5 @@
+{% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="" width="100">
+{% endif %}
+
+<p> loged user is: {{ user.email }}</p>

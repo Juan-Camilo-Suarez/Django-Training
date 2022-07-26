@@ -1,10 +1,6 @@
 {% extends 'web/base.html' %}
 {% block content %}
     {% if user.is_authenticated %}
-    {% if user.avatar %}
-        <img src="{{ user.avatar.url }}" alt="" width="100">
-    {% endif %}
-
-    <p> loged user is: {{ user.email }}</p>
+        {% include 'web/patrials/profile.html' %}
     {% endif %}
 {% endblock %}
