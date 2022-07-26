@@ -9,9 +9,14 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         # echo 'url' | python manage.py import_sites --user_id #
         parser.add_argument('--user_id', dest='user_id', help='user ID', type=int)
+        # python manage.py import_sites --user_id # --file 'text.txt'
+        parser.add_argument('--file', dest='file', help='File path', type=str)
 
-    def handle(self, user_id, *args, **options):
-        fd = sys.stdin
+    def handle(self, user_id, file=None, *args, **options):
+        if file is not None:
+            fd = open(file, 'r')
+        else:
+            fd = sys.stdin
 
         count = 0
         sites = []
