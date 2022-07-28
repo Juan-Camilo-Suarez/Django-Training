@@ -1,25 +1,42 @@
 {% extends 'web/base.html' %}
 {% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'sites' %}">Сайты</a>
+            </li>
+            {% if object %}
+                <li class="breadcrumb-item">
+                    <a href="{% url 'site' object.id %}">{{ object.name }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Edit site</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">Add site</li>
+            {% endif %}
+        </ol>
+    </nav>
 
-<h1>
-    {% if not object %}
-    Add
-    {% else %}
-    Update
-    {% endif %}
- site</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
 
-    <button class="btn btn-primary">
+    <h1>
         {% if not object %}
-    Add
-    {% else %}
-    Update
-    {% endif %}
-     site</button>
-</form>
+            Add
+        {% else %}
+            Update
+        {% endif %}
+        site</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-primary">
+            {% if not object %}
+                Add
+            {% else %}
+                Update
+            {% endif %}
+            site
+        </button>
+    </form>
 
 
 {% endblock %}

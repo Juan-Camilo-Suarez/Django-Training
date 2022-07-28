@@ -1,10 +1,20 @@
 {% extends 'web/base.html' %}
 {% block title %}observation {{ object.name }}{% endblock %}
 {% block content %}
+<!-- breadcrumb para mostrar l historial de pasos de la persona-->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'sites' %}">sites</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object.name }}</li>
+        </ol>
+    </nav>
+
 
     <h1>{{ object.name }}</h1>
     <p><a href="{{ object.url }}" target="_black">{{ object.url }}</a></p>
     <!-- asi para meterle el id en el path -->
-    <p><a href="{% url 'site-edit' object.id %}">edit site</a></p>
+    <p><a href="{% url 'site-edit' object.id %}" class="btn btn-outline-primary">edit site</a></p>
 
 {% endblock %}

@@ -25,8 +25,8 @@ urlpatterns = [
     path('register/', register_view, name='register'),
     path('logout/', logout_view, name='logout'),
     path('html/', html_view, name='html'),
-    path('sites/add/', SiteView.as_view(), name='site-add'),
-    path('sites/<int:pk>/', SiteDetailView.as_view(), name='site'),
-    path('sites/<int:pk>/edit/', SiteUpdateView.as_view(), name='site-edit'),
+    path('site/add/', SiteView.as_view(), name='site-add'),
+    path('site/<int:pk>/', SiteDetailView.as_view(), name='site'),
+    path('site/<int:pk>/edit/', SiteUpdateView.as_view(), name='site-edit'),
     path('sites/', SiteListView.as_view(), name='sites'),
 ]

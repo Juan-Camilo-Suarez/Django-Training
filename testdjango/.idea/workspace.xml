@@ -5,8 +5,10 @@
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/sites/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/sites/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/web/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/web/sites/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/sites/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/web/sites/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/sites/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
       <workItem from="1658824563188" duration="14056000" />
-      <workItem from="1658996554921" duration="3115000" />
+      <workItem from="1658996554921" duration="4081000" />
     </task>
     <servers />
   </component>
