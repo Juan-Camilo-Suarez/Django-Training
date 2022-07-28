@@ -92,7 +92,8 @@ class SiteUpdateView(LoginRequiredMixin, UpdateView):
 
 class SiteListView(LoginRequiredMixin, ListView):
     paginate_by = 10
-    model = Site
+    # obtener el modelo ordenado por id
+    queryset = Site.objects.all().order_by('id')
     template_name = 'web/sites/list.html'
 
 

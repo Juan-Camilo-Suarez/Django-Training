@@ -2,13 +2,30 @@
 {% block content %}
 
     <h1>your list sites</h1>
-    <ul>
-        {% for site in object_list %}
-            <li>
-                <a href="{% url 'site' site.id %}">{{ site.name }} (<i>{{ site.url }}</i>)</a>
-            </li>
-        {% endfor %}
-    </ul>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for site in object_list %}
+
+                <tr class="{% if site.status %}table-success{% else %}table-danger{% endif %}">
+                    <td>{{ site.id }}</td>
+                    <td>{{ site.name }}</td>
+                    <td>{{ site.url }}</td>
+                    <td>
+                        <a href="{% url 'site' site.id %}" class="btn btn-outline-secondary">Open site</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
         <nav aria-label="Page navigation example">
         <ul class="pagination">
             {% if page_obj.has_previous %}
