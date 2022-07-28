@@ -1,4 +1,4 @@
-from django.forms import forms, fields, PasswordInput, ModelForm
+from django.forms import forms, fields, PasswordInput, ModelForm, TextInput
 
 from .models import Site
 
@@ -7,11 +7,18 @@ from .models import Site
 
 
 class RegistrationForm(forms.Form):
-    email = fields.EmailField()
+    # estos attrs son para agregar los tributos de bootstraps al from
+    email = fields.EmailField(widget=TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Email'
+    }))
     # para que no se vea la clave
     # nombre para los labels
-    password = fields.CharField(label="Password", widget=PasswordInput())
-    password2 = fields.CharField(label='Repeat Password', widget=PasswordInput())
+    password = fields.CharField(label="Password",
+                                widget=PasswordInput(attrs={'class': 'form-control',
+                                                            'placeholder': 'password'}))
+    password2 = fields.CharField(label='Repeat Password', widget=PasswordInput(attrs={'class': 'form-control',
+                                                                                      'placeholder': 'password'}))
     avatar = fields.ImageField()
 
     def clean(self):

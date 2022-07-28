@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/forms.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,8 @@
       <workItem from="1658672038786" duration="4345000" />
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
-      <workItem from="1658824563188" duration="13610000" />
+      <workItem from="1658824563188" duration="14056000" />
+      <workItem from="1658996554921" duration="660000" />
     </task>
     <servers />
   </component>
