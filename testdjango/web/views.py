@@ -91,6 +91,7 @@ class SiteUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class SiteListView(LoginRequiredMixin, ListView):
+    paginate_by = 10
     model = Site
     template_name = 'web/sites/list.html'
 
