@@ -68,6 +68,11 @@ class Site(BaseModel):
 
 
 class SiteHistory(BaseModel):
-    site = models.ForeignKey(Site, on_delete=models.CASCADE)
-    status_code = models.IntegerField(null=True)
-    error_response_content = models.TextField(null=True, blank=True)
+    site = models.ForeignKey(Site, on_delete=models.CASCADE, verbose_name='site')
+    status_code = models.IntegerField(null=True, verbose_name='status code')
+    error_response_content = models.TextField(null=True, blank=True, verbose_name='description error')
+
+    class Meta:
+        verbose_name = 'history status site'
+        verbose_name_plural = 'status histories sites'
+
