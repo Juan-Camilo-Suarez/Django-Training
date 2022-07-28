@@ -61,5 +61,5 @@ class Site(BaseModel):
 
 class SiteHistory(BaseModel):
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
-    status_code = models.IntegerField()
+    status_code = models.IntegerField(null=True)
     error_response_content = models.TextField(null=True, blank=True)
