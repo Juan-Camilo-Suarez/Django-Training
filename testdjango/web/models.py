@@ -55,13 +55,16 @@ class Site(BaseModel):
     status = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    # mostrar el nombre de cada site 
+    # mostrar el nombre de cada site
     def __str__(self):
         return self.name
 
     class Meta:
         # de esta manera para cada usuario se tendra un url unico
         unique_together = [('url', 'user_id')]
+        # nombre del modelo en el admin
+        verbose_name = 'site'
+        verbose_name_plural = 'sites'
 
 
 class SiteHistory(BaseModel):
