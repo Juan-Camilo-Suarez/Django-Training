@@ -9,7 +9,7 @@ class SiteHistoryInline(admin.TabularInline):
     model = SiteHistory
     readonly_fields = ('status_code', 'error_response_content', 'create_at')
 
-    # para no agregar y para no eliminar 
+    # para no agregar y para no eliminar
     def has_add_permission(self, request, obj):
         return False
 
@@ -17,11 +17,10 @@ class SiteHistoryInline(admin.TabularInline):
         return False
 
 
-
 class SiteModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'url', 'status', 'create_at', 'update_at')
+    list_display = ('get_site_full_name', 'id', 'name', 'url', 'status', 'create_at', 'update_at')
     # convertir parametros en links
-    list_display_links = ('id', 'name')
+    list_display_links = ('get_site_full_name', 'id', 'name')
     list_filter = ('status',)
     search_fields = ('id', 'name', 'url')
     # convierte estos params en no editables
@@ -29,8 +28,14 @@ class SiteModelAdmin(admin.ModelAdmin):
     # orden
     ordering = ('-update_at',)
     # exclude() ayuda aquitar un param
-    #agregar otro modelo que se conecta con este
+    # agregar otro modelo que se conecta con este
     inlines = (SiteHistoryInline,)
+
+    # atributos personalisados 
+    def get_site_full_name(self, instance):
+        return f'#{instance.id} {instance.name} ({instance.url})'
+
+    get_site_full_name.short_description = 'complete name site'
 
 
 admin.site.register(Site, SiteModelAdmin)
