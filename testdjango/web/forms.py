@@ -5,20 +5,23 @@ from .models import Site
 
 # validation of data
 
+# agregarle a todos los field un widget en los atributos
+class BootstrapMixin():
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = field.widget.attrs.get('class', '')
+            field.widget.attrs['class'] += ' form-control'
 
-class RegistrationForm(forms.Form):
+
+class RegistrationForm(BootstrapMixin, forms.Form):
     # estos attrs son para agregar los tributos de bootstraps al from
-    email = fields.EmailField(widget=TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Email'
-    }))
+    email = fields.EmailField()
     # para que no se vea la clave
     # nombre para los labels
     password = fields.CharField(label="Password",
-                                widget=PasswordInput(attrs={'class': 'form-control',
-                                                            'placeholder': 'password'}))
-    password2 = fields.CharField(label='Repeat Password', widget=PasswordInput(attrs={'class': 'form-control',
-                                                                                      'placeholder': 'password'}))
+                                widget=PasswordInput())
+    password2 = fields.CharField(label='Repeat Password', widget=PasswordInput())
     avatar = fields.ImageField()
 
     def clean(self):
@@ -30,14 +33,14 @@ class RegistrationForm(forms.Form):
         return cleaned_data
 
 
-class LoginForm(forms.Form):
+class LoginForm(BootstrapMixin, forms.Form):
     email = fields.EmailField()
     password = fields.CharField(
         label="Password",
         widget=PasswordInput())
 
 
-class SiteForm(ModelForm):
+class SiteForm(BootstrapMixin, ModelForm):
     class Meta:
         model = Site
         fields = ('url', 'name')
