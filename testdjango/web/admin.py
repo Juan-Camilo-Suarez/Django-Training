@@ -79,5 +79,11 @@ class SiteModelAdmin(admin.ModelAdmin):
 
     get_site_full_name.short_description = 'complete name site'
 
+    # agregar estilos al admin
+    class Media:
+        css = {
+            'all': ('web/admin.css',)
+        }
+
 
 admin.site.register(Site, SiteModelAdmin)
