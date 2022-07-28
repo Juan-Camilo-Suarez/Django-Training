@@ -83,7 +83,7 @@ class SiteDetailView(LoginRequiredMixin, DetailView):
 class SiteUpdateView(LoginRequiredMixin, UpdateView):
     model = Site
     template_name = 'web/sites/edit.html'
-    #para obtener los atributos del form
+    # para obtener los atributos del form
     form_class = SiteForm
 
     def get_success_url(self):

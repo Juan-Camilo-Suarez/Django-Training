@@ -73,17 +73,33 @@ class SiteModelAdmin(admin.ModelAdmin):
     actions = (check_sites_action,)
     check_sites_action.short_description = 'update sites'
 
+    # agregar html al admin
+    change_form_template = 'web/admin/site_change_form.html'
+
     # atributos personalisados
     def get_site_full_name(self, instance):
         return f'#{instance.id} {instance.name} ({instance.url})'
 
     get_site_full_name.short_description = 'complete name site'
 
+    # funcion del elemento html agregado al ModelAdmin
+    def changeform_view(self, request, object_id=None, form_url='', extra_context=None):
+        if '_check_site' in request.POST:
+            check_sites([object_id])
+            self.message_user(
+                request,
+                'Site checked',
+                messages.SUCCESS
+            )
+        return super(SiteModelAdmin, self).changeform_view(request, object_id, form_url, extra_context)
+
     # agregar estilos al admin
     class Media:
         css = {
             'all': ('web/admin.css',)
         }
+    # si nesecitamos conectar js entonces de la siguien forma
+    # J js ={''}
 
 
 admin.site.register(Site, SiteModelAdmin)
