@@ -13,6 +13,9 @@ class SiteModelAdmin(admin.ModelAdmin):
     search_fields = ('id', 'name', 'url')
     # convierte estos params en no editables
     readonly_fields = ('status', 'create_at', 'update_at')
+    #orden
+    ordering = ('-updated_at',)
+    #exclude() ayuda aquitar un param
 
 
 admin.site.register(Site, SiteModelAdmin)
