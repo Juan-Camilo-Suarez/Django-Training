@@ -26,8 +26,9 @@ class UserManager(DjangoUserManager):
         user.save()
         return user
 
-    def create_superuser(self, username, email=None, password=None, **extra_fields):
-        user = self.model(email=username, is_staff=True, is_superuser=True)
+    def create_superuser(self, email=None, password=None, **extra_fields):
+        user = self.model(email=email, is_staff=True, is_superuser=True)
+
         user.set_password(password)
         user.save()
         return user
