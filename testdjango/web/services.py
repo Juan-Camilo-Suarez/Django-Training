@@ -12,8 +12,12 @@ def register_user(email: str, password: str, avatar) -> User:
     return user
 
 
-def check_sites():
+def check_sites(ids=None):
     sites = Site.objects.all()
+
+    if ids is not None:
+        sites = sites.filter(id__in=ids)
+
     history_objects = []
     site_objects = []
 

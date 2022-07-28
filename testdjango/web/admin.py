@@ -1,10 +1,12 @@
-from django.contrib import admin
+from django.contrib import admin, messages
 
 # Register your models here.
 from web.models import Site, SiteHistory
 
-
 # como se va a ver la lista en el admin
+from web.services import check_sites
+
+
 class SiteHistoryInline(admin.TabularInline):
     model = SiteHistory
     readonly_fields = ('status_code', 'error_response_content', 'create_at')
@@ -42,6 +44,17 @@ class HttpsFilter(admin.SimpleListFilter):
         return qs
 
 
+def check_sites_action(modeladmin, request, queryset):
+    site_ids = queryset.values_list('id', flat=True)
+    if len(site_ids) > 0:
+        check_sites(site_ids)
+        modeladmin.message_user(
+            request,
+            f'{len(site_ids)} sites update.',
+            messages.SUCCESS
+        )
+
+
 class SiteModelAdmin(admin.ModelAdmin):
     list_display = ('get_site_full_name', 'id', 'name', 'url', 'status', 'create_at', 'update_at')
     # convertir parametros en links
@@ -55,6 +68,10 @@ class SiteModelAdmin(admin.ModelAdmin):
     # exclude() ayuda aquitar un param
     # agregar otro modelo que se conecta con este
     inlines = (SiteHistoryInline,)
+
+    # acciones
+    actions = (check_sites_action,)
+    check_sites_action.short_description = 'update sites'
 
     # atributos personalisados
     def get_site_full_name(self, instance):
