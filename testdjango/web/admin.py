@@ -17,11 +17,36 @@ class SiteHistoryInline(admin.TabularInline):
         return False
 
 
+# my filter custom
+class HttpsFilter(admin.SimpleListFilter):
+    title = 'Protocol Sites'
+    parameter_name = 'https'
+
+    def has_output(self):
+        return True
+
+    def lookups(self, request, model_admin):
+        return (
+            (True, 'with HTTPS'),
+            (False, 'Without HTTPS')
+        )
+
+    def queryset(self, request, queryset):
+        qs = queryset
+
+        if self.value():
+            if self.value() == str(True):
+                qs = qs.filter(url__startswith='https://')
+            elif self.value() == str(False):
+                qs = qs.filter(url__startswith='http://')
+        return qs
+
+
 class SiteModelAdmin(admin.ModelAdmin):
     list_display = ('get_site_full_name', 'id', 'name', 'url', 'status', 'create_at', 'update_at')
     # convertir parametros en links
     list_display_links = ('get_site_full_name', 'id', 'name')
-    list_filter = ('status',)
+    list_filter = ('status', 'update_at', HttpsFilter)
     search_fields = ('id', 'name', 'url')
     # convierte estos params en no editables
     readonly_fields = ('status', 'create_at', 'update_at')
@@ -31,7 +56,7 @@ class SiteModelAdmin(admin.ModelAdmin):
     # agregar otro modelo que se conecta con este
     inlines = (SiteHistoryInline,)
 
-    # atributos personalisados 
+    # atributos personalisados
     def get_site_full_name(self, instance):
         return f'#{instance.id} {instance.name} ({instance.url})'
 
