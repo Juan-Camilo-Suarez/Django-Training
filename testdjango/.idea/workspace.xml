@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5888ee85-be1f-4ad8-8dc1-9c37194eaff9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/management/commands/check_sites.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/training.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/training.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/management/commands/check_sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/management/commands/check_sites.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,7 @@
       <workItem from="1658744400968" duration="7000" />
       <workItem from="1658750577884" duration="158000" />
       <workItem from="1658824563188" duration="14056000" />
-      <workItem from="1658996554921" duration="6123000" />
+      <workItem from="1658996554921" duration="6536000" />
     </task>
     <servers />
   </component>
