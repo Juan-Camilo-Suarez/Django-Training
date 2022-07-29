@@ -41,12 +41,12 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
     # de esta manera se puede decir que atributo va hacer de username
     USERNAME_FIELD = 'email'
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=200)
+    email = models.EmailField(unique=True, verbose_name='Email')
+    password = models.CharField(max_length=200, verbose_name='password')
     # regula quien puede ir al admin
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False, verbose_name='is worker')
     # update_to  para crear una carpeta ne media para guardar los avatares
-    avatar = models.ImageField(upload_to='user_avatars/', null=True, blank=True)
+    avatar = models.ImageField(upload_to='user_avatars/', null=True, blank=True, verbose_name='image')
 
 
 class Site(BaseModel):

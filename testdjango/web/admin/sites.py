@@ -1,7 +1,7 @@
 from django.contrib import admin, messages
 
 # Register your models here.
-from web.models import Site, SiteHistory
+from web.models import Site, SiteHistory, User
 
 # como se va a ver la lista en el admin
 from web.services import check_sites
@@ -100,6 +100,3 @@ class SiteModelAdmin(admin.ModelAdmin):
         }
     # si nesecitamos conectar js entonces de la siguien forma
     # J js ={''}
-
-
-admin.site.register(Site, SiteModelAdmin)
